@@ -16,25 +16,7 @@ const channels = [
     { name: 'MD1 Maghreb', url: 'http://app.upsdo.me:8080/live/PCYXRYCVGSBR/718188917877/83732.ts' },
     { name: 'MD1 Afric', url: 'http://app.upsdo.me:8080/live/PCYXRYCVGSBR/718188917877/83733.ts' },
     { name: 'Laayoun', url: 'http://app.upsdo.me:8080/live/PCYXRYCVGSBR/718188917877/83734.ts' },
-    { name: 'channel10', url: 'http://example.com/live/channel10.m3u8' },
-    { name: 'channel11', url: 'http://example.com/live/channel11.m3u8' },
-    { name: 'channel12', url: 'http://example.com/live/channel12.m3u8' },
-    { name: 'channel13', url: 'http://example.com/live/channel13.m3u8' },
-    { name: 'channel14', url: 'http://example.com/live/channel14.m3u8' },
-    { name: 'channel15', url: 'http://example.com/live/channel15.m3u8' },
-    { name: 'channel16', url: 'http://example.com/live/channel16.m3u8' },
-    { name: 'channel17', url: 'http://example.com/live/channel17.m3u8' },
-    { name: 'channel18', url: 'http://example.com/live/channel18.m3u8' },
-    { name: 'channel19', url: 'http://example.com/live/channel19.m3u8' },
-    { name: 'channel20', url: 'http://example.com/live/channel20.m3u8' },
-    { name: 'channel21', url: 'http://example.com/live/channel21.m3u8' },
-    { name: 'channel22', url: 'http://example.com/live/channel22.m3u8' },
-    { name: 'channel23', url: 'http://example.com/live/channel23.m3u8' },
-    { name: 'channel24', url: 'http://example.com/live/channel24.m3u8' },
-    { name: 'channel25', url: 'http://example.com/live/channel25.m3u8' },
-    { name: 'channel26', url: 'http://example.com/live/channel26.m3u8' },
-    { name: 'channel27', url: 'http://example.com/live/channel27.m3u8' },
-    { name: 'channel28', url: 'http://example.com/live/channel28.m3u8' }
+    { name: 'Arriyadia HD', url: 'http://app.upsdo.me:8080/live/PCYXRYCVGSBR/718188917877/83735.ts' },
 ];
 
 // إنشاء صفحة رئيسية تعرض القنوات المتاحة
