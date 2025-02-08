@@ -15,5 +15,5 @@ app.use('/stream', createProxyMiddleware({
 // تشغيل السيرفر
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(🚀 الخادم يعمل على المنفذ ${PORT});
+    console.log(`🚀 الخادم يعمل على المنفذ ${PORT}`);
 });
