@@ -5,28 +5,37 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 const app = express();
 app.use(cors()); // إزالة قيود CORS
 
-// قائمة القنوات (تأكد من أن الروابط صحيحة)
+// قائمة القنوات
 const channels = [
-    { name: "AlAoula", url: "http://app.upsdo.me:8080/live/PCYXYRCVGSBR/718188917877/83728.ts" },
-    { name: "2M", url: "http://app.upsdo.me:8080/live/PCYXYRCVGSBR/718188917877/83727.ts" },
-    { name: "M24", url: "http://app.upsdo.me:8080/live/PCYXYRCVGSBR/718188917877/83726.ts" },
-    { name: "Medi1 TV", url: "http://app.upsdo.me:8080/live/PCYXYRCVGSBR/718188917877/83729.ts" },
-    { name: "Arryadia HD", url: "http://app.upsdo.me:8080/live/PCYXYRCVGSBR/718188917877/83735.ts" }
+    { name: "AlAoula", url: "http://app.upsdo.me:8080/live/PCYXRYCVGSBR/718188917877/83728.ts" },
+    { name: "2M", url: "http://app.upsdo.me:8080/live/PCYXRYCVGSBR/718188917877/83727.ts" },
+    { name: "N24", url: "http://app.upsdo.me:8080/live/PCYXRYCVGSBR/718188917877/83726.ts" }
 ];
 
-// صفحة رئيسية تعرض القنوات المتاحة
+// صفحة رئيسية تعرض القنوات
 app.get("/", (req, res) => {
-    let channelList = channels.map(channel => <li><a href="/${channel.name}">${channel.name}</a></li>).join('');
+    let channelList = channels.map(channel => `<li><a href="/channel/${encodeURIComponent(channel.name)}">${channel.name}</a></li>`).join("");
+
     res.send(`
-        <h1>🚀 الخادم يعمل بنجاح!</h1>
-        <h2>📺 القنوات المتاحة:</h2>
-        <ul>${channelList}</ul>
+        <!DOCTYPE html>
+        <html lang="ar">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>قنوات IPTV</title>
+        </head>
+        <body>
+            <h1>🚀 الخادم يعمل بنجاح</h1>
+            <h2>القنوات المتاحة:</h2>
+            <ul>${channelList}</ul>
+        </body>
+        </html>
     `);
 });
 
 // إنشاء البروكسي لكل قناة
 channels.forEach(channel => {
-    app.use(/${channel.name}, createProxyMiddleware({
+    app.use(`/channel/${encodeURIComponent(channel.name)}`, createProxyMiddleware({
         target: channel.url,
         changeOrigin: true,
         secure: false
