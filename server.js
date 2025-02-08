@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 
 // إعداد بروكسي للبث المباشر
 app.use('/stream', createProxyMiddleware({
-    target: 'http://app.upsdo.me:8080/live/PCYXRYCVG5BR/718188917877/83728.ts',
+    target: 'http://app.upsdo.me:8080/live/PCYXRYCVGSBR/718188917877/83728.ts',
     changeOrigin: true,
     secure: false
 }));
